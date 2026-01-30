@@ -1,1 +1,1 @@
-Linear Algebra
+slicing in linear_algebra

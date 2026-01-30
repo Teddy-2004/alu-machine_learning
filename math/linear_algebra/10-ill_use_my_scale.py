@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
+"""Demonstration use of numpy shape utilities"""
+
 
 def np_shape(matrix):
-    import numpy as np
-    np_matrix = np.array(matrix)
-    return list(np_matrix.shape)
+    """Calculate shape of ndarray"""
+    return matrix.shape

@@ -1,15 +1,17 @@
 #!/usr/bin/env python3
+"""Peform matrix muliplication on list-based matrices"""
+
+
 def mat_mul(mat1, mat2):
+    """Multiply mat1 and mat2 in that order"""
     if len(mat1[0]) != len(mat2):
         return None
-    result = []
-    for i in range(len(mat1)):
-        row = []
-        for j in range(len(mat2[0])):
-            sum_product = 0
-            for k in range(len(mat2)):
-                sum_product += mat1[i][k] * mat2[k][j]
-            row.append(sum_product)
-        result.append(row)
-    return result
-mat_mul = __import__('8-ridin_bareback').mat_mul
+    new_mat = []
+    for arr1 in mat1:
+        new_row = []
+        for i in range(len(mat2[0])):
+            arr2 = [arr[i] for arr in mat2]
+            dot = sum([x*y for x, y in zip(arr1, arr2)])
+            new_row.append(dot)
+        new_mat.append(new_row)
+    return new_mat
